@@ -1,0 +1,172 @@
+/* STEP 1 */
+#logo{
+    width: 475px;
+    opacity: 1;
+    animation: hw5_move 5s;
+}
+
+@keyframes hw5_move{
+    from {width: 25px; opacity: 0;}
+    to {width: 475px; opacity: 1;}
+}
+
+/* STEP 2 */
+body{
+    font-family: 'Poppins', serif;  
+    background-image: url('../images/concrete_seamless.png'); 
+    background-color: #F1F1F1;
+}
+
+/* STEP 3 */
+/* flex: row, direction: wrap DEFAULT */
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* STEP 4 */
+.nav_links{
+    display: flex;
+    flex-direction: column;
+}
+
+/* STEP 5 */
+li a{
+    color: #0000ff;
+}
+
+/* STEP 6 */
+.card > header{
+    background-color: #288088;
+    border: solid 2px #45ADAD;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 50px 50px 0px 0px;
+}
+
+/* MUST ALSO DO IN PRINT VIEW */
+/* MUST ALSO STYLE PARENT TO ROUND BOTH BLUE AND WHITE */
+.card{
+    border-radius: 50px 50px 0px 0px;
+}
+
+/* STEP 8 */
+.card{
+    display: flex;
+    flex-basis: 450px;
+    flex-direction: column;
+}
+
+/* STEP 8 */
+.pricing{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+/* STEP 9 */
+/* MUST USE IMG IN ORDER TO STYLE EACH IMAGE */
+.gallery img{
+    display: flex;
+    border: solid 10px #50C7C7;
+    margin: 10px;
+    width: 300px;
+}
+
+/* STEP 10 */
+.gallery{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-self: center;
+    justify-content: center;
+}
+
+/* STEP 11 */
+/* SCREEN SIZE GREATER THAN 900PX
+ */
+@media only screen and (min-width: 900px){
+/* STEP 11 */
+header{
+    display: flex;
+    flex-direction: row;
+    /* space-between moves the nav bar to the right most */
+    justify-content: space-between;
+}
+
+/* STEP 11 */
+.nav_links{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+/* STEP 12 */
+.pricing, .card{
+    flex-basis: 275px;
+}
+
+/* STEP 13: Modify the first header (the one not inside main) so that it remains visible at the top of the screen even as we scroll down. Make sure that it is always visible. */
+/* scrolling also occurs with each box */
+body > header{
+    position: sticky;
+    top: 0;
+}
+}
+
+/* STEP 14 */
+@media screen and (prefers-reduced-motion: reduce){
+#logo{
+    animation: none;
+   } 
+}
+
+/* COLOR NOT SHOWING UP IN PRINT --> CHECK BACKGROUND GRAPHICS IN PRINT SETTINGS */
+@media print {
+/* STEP 15/16 */
+body{
+    font-family: Arial, Helvetica;
+    background-image: none;
+    }
+
+/* STEP 17 */
+/* spacing of the nav_links are not working */
+/* spacing needs to be the entire page */
+nav{
+    width: 100%;
+}
+
+.nav_links{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+/* STEP 18: Edit the pricing class so that the elements align along the bottom. */
+.pricing{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    /* align-items so that all boxes are at the same level */
+    align-items: flex-end;
+}
+
+/* STEP 19 */
+.card{
+    display: flex;
+    flex-basis: 325px;
+    border: solid 2px #45ADDD;
+}
+
+/* STEP 20 */
+h2#gallery, .gallery{
+    display: none;
+}
+
+.card li:nth-child(2)::after{
+    content: "👍"
+}
+}
