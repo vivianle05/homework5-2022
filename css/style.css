@@ -31,12 +31,12 @@ header{
     flex-direction: column;
 }
 
-/* STEP 5 */
+/* STEP 5: Style the links so that they have the same color even after they have been visited. */
 li a{
     color: #0000ff;
 }
 
-/* STEP 6 */
+/* STEP 6: Identify the proper selector to style ONLY those header elements that are direct children of a card class. */
 .card > header{
     background-color: #288088;
     border: solid 2px #45ADAD;
@@ -46,28 +46,30 @@ li a{
 }
 
 /* MUST ALSO DO IN PRINT VIEW */
-/* MUST ALSO STYLE PARENT TO ROUND BOTH BLUE AND WHITE */
+/* MUST ALSO STYLE PARENT TO ROUND BOTH BLUE AND WHITE BOXES */
+/* STEP 7: styles the  */
 .card{
     border-radius: 50px 50px 0px 0px;
 }
 
-/* STEP 8 */
+/* STEP 8: Specify an intitial "size" of 450px. */
 .card{
-    display: flex;
+    /* display: flex; */
+    /* should not specify flex here because it would give extra space */
     flex-basis: 450px;
     flex-direction: column;
 }
 
-/* STEP 8 */
+/* STEP 8: Use flex to center the cards horizontally and vertically. */
 .pricing{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    align-items: center;
+    /* align-items: center; should not be here because will override in media query */
     justify-content: center;
 }
 
-/* STEP 9 */
+/* STEP 9: Style the IMAGES in the gallery. */
 /* MUST USE IMG IN ORDER TO STYLE EACH IMAGE */
 .gallery img{
     display: flex;
@@ -77,19 +79,19 @@ li a{
 }
 
 /* STEP 10 */
+/* MUST ONLY USE GALLERY CLASS TO STYLE THE ENTIRE GALLERY */
 .gallery{
     display: flex;
-    flex-direction: row;
+    /* flex-direction: row; */
     flex-wrap: wrap;
-    align-self: center;
+    /* align-self: center; */
     justify-content: center;
 }
 
-/* STEP 11 */
-/* SCREEN SIZE GREATER THAN 900PX
- */
+
+/* SCREEN SIZE GREATER THAN 900PX */
 @media only screen and (min-width: 900px){
-/* STEP 11 */
+/* STEP 11: Edit the style sheet for the HEADER tag and the NAV_LINKS class. The logo should be as far to the left and the links as far to the right as possible. */
 header{
     display: flex;
     flex-direction: row;
@@ -104,20 +106,25 @@ header{
     justify-content: flex-end;
 }
 
-/* STEP 12 */
-.pricing, .card{
+/* STEP 12: Specify a "size" of 275px. */
+/* NOT SURE WHAT THE DIFFERENCE IS, CHECK !!!!!!!!!!!!!!!!!!!!!!!!! */
+.card{
     flex-basis: 275px;
+}
+.pricing{
+    align-items: center;
 }
 
 /* STEP 13: Modify the first header (the one not inside main) so that it remains visible at the top of the screen even as we scroll down. Make sure that it is always visible. */
-/* scrolling also occurs with each box */
+/* MUST CHOOSE THE CHILD SELECTOR TO SELECT ONLY THE HEADER IN THE BODY */
 body > header{
     position: sticky;
     top: 0;
+    /* visibility: visible; */
 }
 }
 
-/* STEP 14 */
+/* STEP 14: The logo class should appear but not be animated if prefers-reduced motion is selected in accessibility preferences. */
 @media screen and (prefers-reduced-motion: reduce){
 #logo{
     animation: none;
@@ -126,7 +133,7 @@ body > header{
 
 /* COLOR NOT SHOWING UP IN PRINT --> CHECK BACKGROUND GRAPHICS IN PRINT SETTINGS */
 @media print {
-/* STEP 15/16 */
+/* STEP 15/16: Change font on the body to Arial with backup value of Helvetica. */
 body{
     font-family: Arial, Helvetica;
     background-image: none;
@@ -147,7 +154,7 @@ nav{
 
 /* STEP 18: Edit the pricing class so that the elements align along the bottom. */
 .pricing{
-    display: flex;
+    /* display: flex; */
     flex-direction: row;
     flex-wrap: nowrap;
     /* align-items so that all boxes are at the same level */
@@ -156,7 +163,8 @@ nav{
 
 /* STEP 19 */
 .card{
-    display: flex;
+    /* display: flex; */
+    /* display flex adds extra space above the first item in the list */
     flex-basis: 325px;
     border: solid 2px #45ADDD;
 }
@@ -166,7 +174,8 @@ h2#gallery, .gallery{
     display: none;
 }
 
-.card li:nth-child(2)::after{
-    content: "👍"
+/* CHECK nth-child selector if it needs to be expression or integer !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+.card li:nth-child(even)::after{
+    content: "\1F44D"
 }
 }

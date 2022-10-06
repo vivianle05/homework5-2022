@@ -1,0 +1,76 @@
+/* STEP 1 */
+#logo{
+    width: 475px;
+    opacity: 1;
+    animation: hw5_move 5s;
+}
+
+@keyframes hw5_move{
+    from {width: 25px; opacity: 0;}
+    to {width: 475px; opacity: 1;}
+}
+
+/* STEP 2 */
+body{
+    font-family: 'Poppins', serif;  
+    background-image: url('../images/concrete_seamless.png'); 
+    background-color: #F1F1F1;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav_links{
+    display: flex;
+    flex-direction: column;
+}
+
+li a{
+    color: #0000ff;
+}
+
+.card > header{
+    background: #288088;
+    border: solid 2px #45ADAD;
+    padding: 20px 0px 20px 0px;
+    border-radius: 50px 50px 0px 0px;
+}
+
+.card{
+    border-radius: 50px 50px 0px 0px;
+}
+
+.card{
+    flex-basis: 450px;
+    flex-direction: column;
+}
+
+.pricing{
+   display: flex; 
+   /* flex-flow (row and wrap) and flex-direction (row ONLY) BOTH work */
+   flex-flow: row wrap;
+   /* flex-direction: row; */
+   /* if using direction, use flex-wrap */
+   /* flex-wrap: wrap; */ 
+   justify-content: center;
+}
+
+.gallery img{
+    display: flex;
+    border: solid 10px #50C7C7;
+    margin: 10px;
+    width: 300px;
+}
+
+.gallery{
+    display: flex;
+    /* flex-flow: row wrap; */
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+
